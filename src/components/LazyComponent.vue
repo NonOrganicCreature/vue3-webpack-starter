@@ -4,4 +4,5 @@
 </script>
 <template>
   <div>{{ testRef }}</div>
+  <img src="/images/cloud2.png" alt="" />
 </template>
