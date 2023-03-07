@@ -1,5 +1,6 @@
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 const mixin = require('./webpack.mixin')
 
@@ -25,14 +26,14 @@ module.exports = {
               source: 'public/fonts',
               destination: 'dist/fonts',
             },
-            {
-              source: 'public/favicon.ico',
-              destination: 'dist/',
-            },
           ],
           delete: ['dist/*.js'],
         },
       },
+    }),
+    new FaviconsWebpackPlugin({
+      publicPath: '/',
+      logo: './public/favicon.png',
     }),
   ],
 }
