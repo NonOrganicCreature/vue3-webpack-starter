@@ -1,4 +1,5 @@
 const FileManagerPlugin = require('filemanager-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const mixin = require('./webpack.mixin')
 
@@ -7,6 +8,7 @@ module.exports = {
   ...mixin,
   plugins: [
     ...mixin.plugins,
+    new HtmlWebpackPlugin({ template: './index.html', publicPath: '/js' }),
     new FileManagerPlugin({
       events: {
         onEnd: {
@@ -18,6 +20,14 @@ module.exports = {
             {
               source: 'public/images',
               destination: 'dist/images',
+            },
+            {
+              source: 'public/fonts',
+              destination: 'dist/fonts',
+            },
+            {
+              source: 'public/favicon.ico',
+              destination: 'dist/',
             },
           ],
           delete: ['dist/*.js'],

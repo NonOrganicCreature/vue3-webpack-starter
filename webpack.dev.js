@@ -1,6 +1,7 @@
 const path = require('path')
 
 const mixin = require('./webpack.mixin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -17,4 +18,8 @@ module.exports = {
     client: { overlay: false },
   },
   ...mixin,
+  plugins: [
+    ...mixin.plugins,
+    new HtmlWebpackPlugin({ template: './index.html' }),
+  ],
 }
