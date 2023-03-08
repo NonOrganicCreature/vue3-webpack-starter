@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const Home = () =>
-  import(/* webpackChunkName: "HomePage" */ '../pages/Home.vue')
+  import(/* webpackChunkName: "HomePage" */ '../pages/HomePage.vue')
 
 import TestPage from '../pages/TestPage.vue'
 

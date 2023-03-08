@@ -1,7 +1,8 @@
 const path = require('path')
 
-const mixin = require('./webpack.mixin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const mixin = require('./webpack.mixin')
 
 module.exports = {
   mode: 'development',
@@ -21,5 +22,6 @@ module.exports = {
   plugins: [
     ...mixin.plugins,
     new HtmlWebpackPlugin({ template: './index.html' }),
+    new ESLintPlugin({ files: ['src/**/*.ts', 'src/**/*.vue'] }),
   ],
 }

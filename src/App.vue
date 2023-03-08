@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-  let str: string = 'Hello World'
+  let str = 'Hello World'
 
   console.log(str)
 </script>
